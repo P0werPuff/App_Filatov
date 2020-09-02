@@ -16,7 +16,7 @@
                 HorizontalOptions="CenterAndExpand" 
                    </Button>
                 <Button x:Name="btn"
-                     Text="Vajuta siin"
+                     Text="GO GO"
                      BackgroundColor="#FF55CF"
                      BorderColor="#D0FF"
                      BorderWidth="7"
