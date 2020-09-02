@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_Filatov.StackPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"> 
+            <Label x:Name="lbl"
+                   Text="Nupp!"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" 
+                   />
+            <StackLayout Orientation="Vertical">
+                <Button x:Name="lbl"
+                   Text="Nupp!"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" 
+                   </Button>
+                <Button x:Name="btn"
+                     Text="Vajuta siin"
+                     BackgroundColor="#FF55CF"
+                     BorderColor="#D0FF"
+                     BorderWidth="7"
+                     FontSize="Large"
+                     Clicked="Btn2_Clicked"
+                     VerticalOptions="Center">
+
+                </Button>
+                <Button x:Name="btn2"
+                     Text="Vajuta siin"
+                     BackgroundColor="#FFF"
+                     BorderColor="#D0FF"
+                     BorderWidth="7"
+                     FontSize="Large"
+                     Clicked="Btn2_Clicked"
+                     VerticalOptions="Center">
+
+                </Button>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
