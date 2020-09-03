@@ -21,7 +21,7 @@ namespace App_Filatov
         {
             //btn.Text= "Huraaa!";
             clik++;
-            btn.Text = clik.ToString();
+            //btn.Text = clik.ToString();
             if (clik % 5 == 0)
             {
                 //lbl.IsVisible = false;
@@ -36,7 +36,7 @@ namespace App_Filatov
         private void btn2_Clicked(object sender, EventArgs e)
         {
             clik = 0;
-            btn.Text = clik.ToString();
+            //btn.Text = clik.ToString();
         }
 
     }

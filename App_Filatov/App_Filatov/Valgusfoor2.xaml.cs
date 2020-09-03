@@ -22,12 +22,28 @@ namespace App_Filatov
                 FontSize = 18,
                 FontAttributes = FontAttributes.Bold
             };
+            Frame pun = new Frame()
+            {
+                BackgroundColor = Color.Gray,
+                Content = punane,
+                CornerRadius = 90,
+                Padding = 50,
+                Margin = new Thickness(80, 0, 80, 0)
+            };
             Label kollane = new Label()
             {
                 Text = "Kollane",
                 TextColor = Color.Yellow,
                 FontSize = 18,
                 FontAttributes = FontAttributes.Bold
+            };
+            Frame kol = new Frame()
+            {
+                BackgroundColor = Color.Gray,
+                Content = kollane,
+                CornerRadius = 90,
+                Padding = 50,
+                Margin = new Thickness(80, 0, 80, 0)
             };
             Label roheline = new Label()
             {
@@ -36,6 +52,27 @@ namespace App_Filatov
                 FontSize = 18,
                 FontAttributes = FontAttributes.Bold
             };
+            Frame roh = new Frame()
+            {
+                BackgroundColor = Color.Gray,
+                Content = roheline,
+                CornerRadius = 90,
+                Padding = 50,
+                Margin = new Thickness(80, 0, 80, 0)
+            };
+            Button btn1 = new Button()
+            {
+                Text = "On",
+                HorizontalOptions = LayoutOptions.EndAndExpand
+            };
+            Button btn2 = new Button()
+            {
+                Text = "Off",
+                HorizontalOptions = LayoutOptions.StartAndExpand{
+
+                
+
+
             StackLayout stackLayout = new StackLayout()
             {
                 Children = { punane, kollane, roheline }
