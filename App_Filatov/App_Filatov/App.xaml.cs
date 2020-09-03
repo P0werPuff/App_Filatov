@@ -10,7 +10,7 @@ namespace App_Filatov
         {
             InitializeComponent();
 
-            MainPage = new StackPage();
+            MainPage = new Valgusfoor2();
         }
 
 
