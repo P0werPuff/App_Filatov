@@ -15,72 +15,71 @@ namespace App_Filatov
         public Valgusfoor2()
         {
             //InitializeComponent();
-            Label punane = new Label()
+            Label red = new Label()
             {
-                Text = "Punane",
+                Text = "  Red  ",
                 TextColor = Color.Red,
-                FontSize = 18,
-                FontAttributes = FontAttributes.Bold
+                FontSize = 18
             };
-            Frame pun = new Frame()
+            Frame rframe = new Frame()
             {
                 BackgroundColor = Color.Gray,
-                Content = punane,
+                Content = red,
                 CornerRadius = 90,
                 Padding = 50,
-                Margin = new Thickness(80, 0, 80, 0)
+                HorizontalOptions = LayoutOptions.Center
             };
-            Label kollane = new Label()
+            Label yellow = new Label()
             {
-                Text = "Kollane",
+                Text = "Yellow",
                 TextColor = Color.Yellow,
-                FontSize = 18,
-                FontAttributes = FontAttributes.Bold
+                FontSize = 18
+
             };
-            Frame kol = new Frame()
+            Frame yframe = new Frame()
             {
                 BackgroundColor = Color.Gray,
-                Content = kollane,
+                Content = yellow,
                 CornerRadius = 90,
                 Padding = 50,
-                Margin = new Thickness(80, 0, 80, 0)
+                HorizontalOptions = LayoutOptions.Center
             };
-            Label roheline = new Label()
+            Label green = new Label()
             {
-                Text = "Roheline",
+                Text = "Green ",
                 TextColor = Color.Green,
-                FontSize = 18,
-                FontAttributes = FontAttributes.Bold
+                FontSize = 18
+
             };
-            Frame roh = new Frame()
+            Frame gframe = new Frame()
             {
                 BackgroundColor = Color.Gray,
-                Content = roheline,
+                Content = green,
                 CornerRadius = 90,
                 Padding = 50,
-                Margin = new Thickness(80, 0, 80, 0)
+                HorizontalOptions = LayoutOptions.Center
             };
-            Button btn1 = new Button()
+            Button bt1 = new Button()
             {
                 Text = "On",
-                HorizontalOptions = LayoutOptions.EndAndExpand
+                HorizontalOptions = LayoutOptions.Start
             };
-            Button btn2 = new Button()
+            Button bt2 = new Button()
             {
-                Text = "Off",
-                HorizontalOptions = LayoutOptions.StartAndExpand{
-
-                
-
-
+                Text = "off",
+                HorizontalOptions = LayoutOptions.End
+            };
+            StackLayout stackLayout2 = new StackLayout()
+            {
+                Children = { bt1, bt2 }
+            };
             StackLayout stackLayout = new StackLayout()
             {
-                Children = { punane, kollane, roheline }
+                Children = { rframe, yframe, gframe, stackLayout2 }
             };
-            stackLayout.Orientation = StackOrientation.Horizontal;
+            stackLayout2.Orientation = StackOrientation.Horizontal;
+            stackLayout2.Margin = new Thickness(90, 0, 0, 0);
             Content = stackLayout;
-
-
         }
     }
 }

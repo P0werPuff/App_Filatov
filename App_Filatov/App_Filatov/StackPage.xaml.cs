@@ -16,28 +16,26 @@ namespace App_Filatov
         {
             InitializeComponent();
         }
-        int clik = 0;
-        private void Btn_Clicked(object sender, EventArgs e)
+        int clik = 1;
+
+        private void b1_Clicked(object sender, EventArgs e)
         {
-            //btn.Text= "Huraaa!";
+            b1.Text = clik.ToString();
             clik++;
-            //btn.Text = clik.ToString();
             if (clik % 5 == 0)
             {
-                //lbl.IsVisible = false;
                 lbl.Text = "";
             }
-            else;
+            else
             {
-                //lbl.IsVisible = true;
-                lbl.Text = "Nupp!";
+                lbl.Text = "Button!!11!!";
             }
         }
-        private void btn2_Clicked(object sender, EventArgs e)
+
+        private void b2_Clicked(object sender, EventArgs e)
         {
             clik = 0;
-            //btn.Text = clik.ToString();
+            b1.Text = clik.ToString();
         }
-
     }
 }

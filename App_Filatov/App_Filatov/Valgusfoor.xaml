@@ -4,42 +4,22 @@
              x:Class="App_Filatov.Valgusfoor">
     <ContentPage.Content>
         <StackLayout>
-            <Frame x:Name="pun" BackgroundColor="Gray" 
-                   Padding="80" 
-                   CornerRadius="90" 
-                   Margin="80,0">
-                <Label x:Name="punane"
-                   Text="punane"
-                   FontSize="Large"
-                />
+            <Frame x:Name="rlight" CornerRadius="90" HorizontalOptions="Center" Padding="50" BackgroundColor="#615B5B">
+                <Label Text="К" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
             </Frame>
-            <Frame x:Name="kol" BackgroundColor="Gray" 
-                   Padding="80" 
-                   CornerRadius="90"
-                   Margin="80,0">
-                <Label x:Name="kollane"
-                   Text="kollane"
-                   FontSize="Large"
-                />
-            </Frame>
-            <Frame x:Name="roh" BackgroundColor="Gray" 
-                   Padding="80" 
-                   CornerRadius="90" 
-                   Margin="80,0">
-                <Label x:Name="roheline"
-                   Text="roheline"
-                   FontSize="Large"
-                />
-            </Frame>
-        <StackLayout Orientation="Horizontal">
-           <Button x:Name="On" 
-                   Text="Sisse"
-                   HorizontalOptions="StartAndExpand"
-                   Clicked="on_Clicked"/>
-           <Button x:Name="Off" 
-                   Text="Välja"
-                   HorizontalOptions="EndAndExpand"
-                   Clicked="off_Clicked"/>
+            <StackLayout>
+                <Frame x:Name="ylight" CornerRadius="90" HorizontalOptions="Center" Padding="50" BackgroundColor="#615B5B">
+                    <Label Text="Ж" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                </Frame>
+            </StackLayout>
+            <StackLayout>
+                <Frame x:Name="glight" CornerRadius="90" HorizontalOptions="Center" Padding="50" BackgroundColor="#585353">
+                    <Label Text="З" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                </Frame>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="90,0,0,0">
+                <Button x:Name="onbtn" Text="On" HorizontalOptions="End" Clicked="onbtn_Clicked"/>
+                <Button x:Name="offbtn" Text="Off" HorizontalOptions="Start" Clicked="offbtn_Clicked"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

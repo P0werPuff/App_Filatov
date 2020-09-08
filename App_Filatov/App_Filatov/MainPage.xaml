@@ -4,28 +4,28 @@
              x:Class="App_Filatov.MainPage">
 
     <StackLayout>
-        <Frame BackgroundColor="#2100F3" Padding="40" CornerRadius="50">
-            <Label Text="Big Baby Tape" 
+        <Frame BackgroundColor="#DECB1C" 
+               Padding="40" 
+               CornerRadius="50">
+            <Label Text="I will hack pentagon. Someday..." 
                    HorizontalTextAlignment="Center" 
-                   TextColor="White"
-                   FontSize="36"
-                   RotationX="30"
+                   TextColor="White" 
+                   FontSize="36" 
+                   RotationX="30" 
                    FontAttributes="Bold"/>
         </Frame>
-        <Label Text="MyFirstApp" 
+        <Label Text="TARpv19" 
                FontSize="Title" 
-               Padding="60,10,60,10"/>
-        <Label Text="Wha, Baby Tape, Benzo Gang bitch, wha, wha, wha!" 
-               FontSize="16"
+               Padding="30,10,30,10"/>
+        <Label Text="I won't make changes to my XAML file." 
+               FontSize="16" 
                Padding="30,0,30,0"/>
-        <Label FontSize="16" 
-               Padding="30,24,30,0">
+        <Label FontSize="16" Padding="30,24,30,0">
             <Label.FormattedText>
                 <FormattedString>
                     <FormattedString.Spans>
                         <Span Text="Learn more at "/>
-                        <Span Text="http://babyonboard.cash/" 
-                              FontAttributes="Bold"/>
+                        <Span Text="https://xaml.crap.com/never_use_that_language/" FontAttributes="Bold"/>
                     </FormattedString.Spans>
                 </FormattedString>
             </Label.FormattedText>

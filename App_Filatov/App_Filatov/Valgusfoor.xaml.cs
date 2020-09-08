@@ -15,41 +15,37 @@ namespace App_Filatov
         {
             InitializeComponent();
         }
-        Random rnd = new Random();
-
-        private void on_Clicked(object sender, EventArgs e)
+        Random rand = new Random();
+        int clik = 0;
+        private void onbtn_Clicked(object sender, EventArgs e)
         {
-            int c=rnd.Next(1,4);
-            if (c == 1)
+            var rand = new Random();
+            int num = rand.Next(1, 4);
+            if (num == 1)
             {
-                pun.BackgroundColor = Color.FromRgb(255, 0, 0);
-                kol.BackgroundColor = Color.Gray;
-                roh.BackgroundColor = Color.Gray;
-
+                rlight.BackgroundColor = Color.Red;
+                ylight.BackgroundColor = Color.FromRgb(61, 61, 61);
+                glight.BackgroundColor = Color.FromRgb(61, 61, 61);
             }
-            else if(c == 2)
+            else if (num == 2)
             {
-                pun.BackgroundColor = Color.FromRgb(255, 0, 0);
-                kol.BackgroundColor = Color.Gray;
-                roh.BackgroundColor = Color.Gray;
-            
+                rlight.BackgroundColor = Color.FromRgb(61, 61, 61);
+                ylight.BackgroundColor = Color.Yellow;
+                glight.BackgroundColor = Color.FromRgb(61, 61, 61);
             }
-            else if (c == 3)
+            else if (num == 3)
             {
-                pun.BackgroundColor = Color.FromRgb(255, 0, 0);
-                kol.BackgroundColor = Color.Gray;
-                roh.BackgroundColor = Color.Gray;
+                rlight.BackgroundColor = Color.FromRgb(61, 61, 61);
+                ylight.BackgroundColor = Color.FromRgb(61, 61, 61);
+                glight.BackgroundColor = Color.Green;
             }
-
-
         }
 
-        private void off_Clicked(object sender, EventArgs e)
+        private void offbtn_Clicked(object sender, EventArgs e)
         {
-            pun.BackgroundColor = Color.FromRgb(100, 100, 100);
-            kol.BackgroundColor = Color.Gray;
-            roh.BackgroundColor = Color.FromHex("#aaaaaa");
+            rlight.BackgroundColor = Color.FromRgb(61, 61, 61);
+            ylight.BackgroundColor = Color.FromRgb(61, 61, 61);
+            glight.BackgroundColor = Color.FromRgb(61, 61, 61);
         }
-
     }
 }
