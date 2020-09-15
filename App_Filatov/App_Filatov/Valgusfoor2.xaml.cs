@@ -10,76 +10,126 @@ using Xamarin.Forms.Xaml;
 namespace App_Filatov
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Valgusfoor2 : ContentPage
+    public partial class Valgisfoor2 : ContentPage
     {
-        public Valgusfoor2()
+        Label punane, kollane, roheline;
+        Frame pun, kol, roh;
+        Button sisse, valja;
+        bool sisse_valja;
+        public Valgisfoor2()
         {
             //InitializeComponent();
-            Label red = new Label()
+            punane = new Label()
             {
-                Text = "  Red  ",
-                TextColor = Color.Red,
-                FontSize = 18
+                Text = "Red",
+                HorizontalOptions = LayoutOptions.Center,
+                TextColor = Color.Black,
+                FontSize = 13,
+                FontAttributes = FontAttributes.Bold
             };
-            Frame rframe = new Frame()
+            pun = new Frame()
             {
-                BackgroundColor = Color.Gray,
-                Content = red,
-                CornerRadius = 90,
-                Padding = 50,
-                HorizontalOptions = LayoutOptions.Center
+                BackgroundColor = Color.FromRgb(255, 0, 0),
+                Content = punane,
+                Padding = 80,
+                CornerRadius = 120,
+                Margin = new Thickness(100, 0, 100, 0)
             };
-            Label yellow = new Label()
+            kollane = new Label()
             {
                 Text = "Yellow",
-                TextColor = Color.Yellow,
-                FontSize = 18
-
+                HorizontalOptions = LayoutOptions.Center,
+                TextColor = Color.Black,
+                FontSize = 13,
+                FontAttributes = FontAttributes.Bold
             };
-            Frame yframe = new Frame()
+            kol = new Frame()
             {
-                BackgroundColor = Color.Gray,
-                Content = yellow,
-                CornerRadius = 90,
-                Padding = 50,
-                HorizontalOptions = LayoutOptions.Center
+                BackgroundColor = Color.FromRgb(255, 255, 0),
+                Content = kollane,
+                Padding = 80,
+                CornerRadius = 120,
+                Margin = new Thickness(100, 0, 100, 0)
             };
-            Label green = new Label()
+            roheline = new Label()
             {
-                Text = "Green ",
-                TextColor = Color.Green,
-                FontSize = 18
-
+                Text = "Green",
+                HorizontalOptions = LayoutOptions.Center,
+                TextColor = Color.Black,
+                FontSize = 13,
+                FontAttributes = FontAttributes.Bold
             };
-            Frame gframe = new Frame()
+            roh = new Frame()
             {
-                BackgroundColor = Color.Gray,
-                Content = green,
-                CornerRadius = 90,
-                Padding = 50,
-                HorizontalOptions = LayoutOptions.Center
+                BackgroundColor = Color.FromRgb(0, 255, 0),
+                Content = roheline,
+                Padding = 80,
+                CornerRadius = 120,
+                Margin = new Thickness(100, 0, 100, 0)
             };
-            Button bt1 = new Button()
+            sisse = new Button()
             {
                 Text = "On",
-                HorizontalOptions = LayoutOptions.Start
+                TextColor = Color.Black,
+                FontSize = 20,
+                BorderColor = Color.Gray,
+                BorderWidth = 2,
+                BackgroundColor = Color.LightGray,
+                Margin = new Thickness(120, 0, 120, 0)
             };
-            Button bt2 = new Button()
+            valja = new Button()
             {
-                Text = "off",
-                HorizontalOptions = LayoutOptions.End
-            };
-            StackLayout stackLayout2 = new StackLayout()
-            {
-                Children = { bt1, bt2 }
+                Text = "Off",
+                TextColor = Color.Black,
+                FontSize = 20,
+                BorderColor = Color.Gray,
+                BorderWidth = 2,
+                BackgroundColor = Color.LightGray,
+                Margin = new Thickness(120, 0, 120, 0)
             };
             StackLayout stackLayout = new StackLayout()
             {
-                Children = { rframe, yframe, gframe, stackLayout2 }
+                Children = { pun, kol, roh, sisse, valja }
             };
-            stackLayout2.Orientation = StackOrientation.Horizontal;
-            stackLayout2.Margin = new Thickness(90, 0, 0, 0);
+            sisse.Clicked += Sisse_Clicked;
+            valja.Clicked += Valja_Clicked;
+            //stackLayout.Orientation = StackOrientation.Horizontal;
             Content = stackLayout;
+            var tap = new TapGestureRecognizer();
+            tap.Tapped += Tap_Tapped;
+            pun.GestureRecognizers.Add(tap);
+            kol.GestureRecognizers.Add(tap);
+            roh.GestureRecognizers.Add(tap);
+        }
+
+        private void Tap_Tapped(object sender, EventArgs e)
+        {
+            Frame fr = sender as Frame;
+            if (fr == pun & sisse_valja == false) { punane.Text = "Стой пока горит красный"; }
+            else if (fr == kol & sisse_valja == false) { kollane.Text = "не спеши подожди"; }
+            else if (fr == roh & sisse_valja == false) { roheline.Text = "Можешь идти"; }
+            else if (fr == pun & sisse_valja == true) { punane.Text = "На светофоре"; }
+            else if (fr == kol & sisse_valja == true) { kollane.Text = "На светофоре"; }
+            else if (fr == roh & sisse_valja == true) { roheline.Text = "На светофоре"; }
+        }
+
+        private void Valja_Clicked(object sender, EventArgs e)
+        {
+            pun.BackgroundColor = Color.FromHex("#5A0000");
+            kol.BackgroundColor = Color.FromHex("#3F3F00");
+            roh.BackgroundColor = Color.FromHex("#004100");
+            punane.Text = "Красный";
+            kollane.Text = "Желтый";
+            roheline.Text = "Зеленый";
+            sisse_valja = true;
+        }
+
+        private void Sisse_Clicked(object sender, EventArgs e)
+        {
+            pun.BackgroundColor = Color.FromRgb(255, 0, 0);
+            kol.BackgroundColor = Color.FromRgb(255, 255, 0);
+            roh.BackgroundColor = Color.FromRgb(0, 255, 0);
+            sisse_valja = false;
         }
     }
 }
