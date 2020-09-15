@@ -48,7 +48,7 @@ namespace App_Filatov
             }
         }
         Random clr = new Random();
-        private async void Rand_Clicked(object sender, EventArgs e)
+        private void Rand_Clicked(object sender, EventArgs e)
         {
             Slider1.Value = clr.Next(0, 255);
             Slider2.Value = clr.Next(0, 255);

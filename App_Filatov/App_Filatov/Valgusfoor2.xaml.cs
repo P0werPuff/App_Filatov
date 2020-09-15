@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -10,18 +11,18 @@ using Xamarin.Forms.Xaml;
 namespace App_Filatov
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Valgisfoor2 : ContentPage
+    public partial class Valgusfoor2 : ContentPage
     {
         Label punane, kollane, roheline;
         Frame pun, kol, roh;
         Button sisse, valja;
         bool sisse_valja;
-        public Valgisfoor2()
+        public Valgusfoor2()
         {
             //InitializeComponent();
             punane = new Label()
             {
-                Text = "Red",
+                Text = "Punane",
                 HorizontalOptions = LayoutOptions.Center,
                 TextColor = Color.Black,
                 FontSize = 13,
@@ -37,7 +38,7 @@ namespace App_Filatov
             };
             kollane = new Label()
             {
-                Text = "Yellow",
+                Text = "Kollane",
                 HorizontalOptions = LayoutOptions.Center,
                 TextColor = Color.Black,
                 FontSize = 13,
@@ -53,7 +54,7 @@ namespace App_Filatov
             };
             roheline = new Label()
             {
-                Text = "Green",
+                Text = "Roheline",
                 HorizontalOptions = LayoutOptions.Center,
                 TextColor = Color.Black,
                 FontSize = 13,
@@ -69,7 +70,7 @@ namespace App_Filatov
             };
             sisse = new Button()
             {
-                Text = "On",
+                Text = "sisse",
                 TextColor = Color.Black,
                 FontSize = 20,
                 BorderColor = Color.Gray,
@@ -79,7 +80,7 @@ namespace App_Filatov
             };
             valja = new Button()
             {
-                Text = "Off",
+                Text = "valja",
                 TextColor = Color.Black,
                 FontSize = 20,
                 BorderColor = Color.Gray,
@@ -105,12 +106,12 @@ namespace App_Filatov
         private void Tap_Tapped(object sender, EventArgs e)
         {
             Frame fr = sender as Frame;
-            if (fr == pun & sisse_valja == false) { punane.Text = "Стой пока горит красный"; }
-            else if (fr == kol & sisse_valja == false) { kollane.Text = "не спеши подожди"; }
-            else if (fr == roh & sisse_valja == false) { roheline.Text = "Можешь идти"; }
-            else if (fr == pun & sisse_valja == true) { punane.Text = "На светофоре"; }
-            else if (fr == kol & sisse_valja == true) { kollane.Text = "На светофоре"; }
-            else if (fr == roh & sisse_valja == true) { roheline.Text = "На светофоре"; }
+            if (fr == pun & sisse_valja == false) { punane.Text = "Stopp"; }
+            else if (fr == kol & sisse_valja == false) { kollane.Text = "Oota"; }
+            else if (fr == roh & sisse_valja == false) { roheline.Text = "Mine"; }
+            else if (fr == pun & sisse_valja == true) { punane.Text = "Sisse valgusfoor"; }
+            else if (fr == kol & sisse_valja == true) { kollane.Text = "Sisse valgusfoor"; }
+            else if (fr == roh & sisse_valja == true) { roheline.Text = "Sisse valgusfoor"; }
         }
 
         private void Valja_Clicked(object sender, EventArgs e)
@@ -118,9 +119,9 @@ namespace App_Filatov
             pun.BackgroundColor = Color.FromHex("#5A0000");
             kol.BackgroundColor = Color.FromHex("#3F3F00");
             roh.BackgroundColor = Color.FromHex("#004100");
-            punane.Text = "Красный";
-            kollane.Text = "Желтый";
-            roheline.Text = "Зеленый";
+            punane.Text = "Punane";
+            kollane.Text = "Kollane";
+            roheline.Text = "Roheline";
             sisse_valja = true;
         }
 
